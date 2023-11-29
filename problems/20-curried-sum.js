@@ -42,9 +42,42 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   be useful
 ***********************************************************************/
 
+
+
 function curriedSum(numArgs) {
-  // Your code here
+// Define an empty array, `numbers`.
+  const numbers = [];
+  //- Define a function, `_curriedSum` that:
+  //- Closes over `numArgs` and`numbers`.
+  //- Takes a single number as an argument.
+  function _curriedSum(number) {
+    //- Appends this to the `numbers` array each time.
+    numbers.push(number);
+
+    
+    //- If `numbers.length === numArgs`, it sums the numbers in the array and
+    //    returns the result.
+    if (numbers.length === numArgs) {
+      
+      return numbers.reduce((acc, curr) => acc + curr, 0);
+    } else {
+      // If not enough arguments, return itself for further currying
+      return _curriedSum;
+    }
+  }
+
+  return _curriedSum;
+
 }
+
+
+
+
+const sum = curriedSum(4); // returns a function
+sum(5) // returns a function
+sum(20) // returns a function
+sum(30) // returns a function
+sum(20); // => returns 75
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = curriedSum;

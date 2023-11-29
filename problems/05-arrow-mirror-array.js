@@ -8,9 +8,9 @@ mirrorArray([1,2,3]); // => [ 1, 2, 3, 3, 2, 1 ]
 mirrorArray(['a', 'b', 'c', 'd']); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]
 ***********************************************************************/
 
-const mirrorArray = (array) => {
+const mirrorArray = array =>  array.concat(array.slice().reverse());
   // Your code here
-};
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = mirrorArray;

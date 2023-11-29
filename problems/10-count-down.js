@@ -27,9 +27,52 @@ Example 4:
   console.log(threeDays()); // prints "Happy New Year!"
 
 ***********************************************************************/
-function countDownTimer(num) {
+/*function countDownTimer(num) {
+  if(num>0){
+  num--;};
+  if(num===0){
+    return "happy New Year!"
+  }
+
+  return function() {
+    if(num==0){
+      return "Happy New Year!"
+      
+    }
+    else{
+      
+      num--;
+      return function () { };
+    }
+  }
   // Your code here
-}
+} */
+// Counter to keep track of remaining days
+
+
+// The countdown function
+function countDownTimer(daysRemaining) {
+  if(daysRemaining===0){
+    return "Happy New Year!"
+  }
+  
+  
+return function () {
+  daysRemaining--;
+  if(daysRemaining === 0){
+    return "Happy New Year!"
+  }
+  else{
+    return function () {}
+  }
+
+}}
+
+let threeDays = countDownTimer(3); // returns a function
+console.log(threeDays()); // returns a function
+console.log(threeDays()); // returns a function
+console.log(threeDays()); // prints "Happy New Year!"
+console.log(countDownTimer(0));
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

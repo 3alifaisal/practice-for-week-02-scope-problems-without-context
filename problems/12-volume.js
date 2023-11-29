@@ -23,9 +23,50 @@ console.log(table2(1)); // prints 6
 console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
+/*function recVolume(height) {
+  let counter = 0;
+  
+  return function (width_length) {
+    counter++;
+      const width = width_length;
+      if(counter >= 2) {
+        const length =  width_length;
+        const volume = height * width * length
+        return volume;
+      }
+      
+    
+      
+
+    }
+
+  } */
 function recVolume(height) {
-  // Your code here
+  let width, length;
+
+  return function (value) {
+    if (value !== undefined) {
+      if (width === undefined) {
+        width = value;
+      } else if (length === undefined) {
+        length = value;
+      }
+    }
+
+  
+
+    const volume = height * width * length;
+    return volume;
+  };
 }
+
+
+  // Your code here
+
+let table1 = recVolume(5); // returns a function
+table1(4); // returns a function
+console.log(table1(3)); // prints 60
+console.log(table1(145)); // STILL prints 60
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

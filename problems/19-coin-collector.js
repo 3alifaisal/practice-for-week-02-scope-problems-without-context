@@ -25,8 +25,22 @@ Example 3:
 
 ***********************************************************************/
 function coinCollector(numCoins) {
-  // Your code here
-}
+  let counter = numCoins; 
+  let newArr = [];
+  return function (num) {
+    
+    counter--;
+    if(counter >= 0) {
+      newArr.push(num);
+    }
+     if(counter <= 0){
+      return newArr;
+    }
+  }
+ }
+let twoCoins = coinCollector(2); // returns a function
+twoCoins(25); // returns a function
+console.log(twoCoins(10)); // prints [25, 10]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
